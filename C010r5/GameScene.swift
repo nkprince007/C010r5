@@ -26,6 +26,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     private var bigBall : SKShapeNode?
     private var smallBall: SKShapeNode?
+    private var scoreLabel: SKLabelNode?
+    private var duration: NSTimeInterval = 1.5
+    var score = 0 {
+        willSet(val) {
+            scoreLabel?.text = "\(val)"
+        }
+    }
+    
     
     private var bigBallState = BallState.Blue {
         willSet(value) {
@@ -52,21 +60,28 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         bigBall = SKShapeNode.init(rectOfSize: CGSize.init(width: w, height: w), cornerRadius: w * 0.5)
         bigBall?.fillColor = colors[bigBallState]!
         bigBall?.physicsBody = SKPhysicsBody(circleOfRadius: w * 0.5, center: (bigBall?.position)!)
-        bigBall?.physicsBody?.dynamic = false
+        bigBall?.physicsBody?.pinned = true
         bigBall?.lineWidth = 0.0
         bigBall?.name = "Big"
-        bigBall?.physicsBody?.mass = 100.0
         bigBall?.position = self.position + CGPoint(x: 0, y: -self.frame.height/4)
         addChild(bigBall!)
         
-        let field = SKFieldNode.radialGravityField()
-        field.animationSpeed = 10.0
-        field.smoothness = 1
-        field.region = SKRegion(radius: Float(frame.width*3))
-        field.position = bigBall!.position
-        field.strength = 500.0
-        field.enabled = true
-        addChild(field)
+        //Create score label
+        scoreLabel = SKLabelNode.init(text: "\(score)")
+        scoreLabel?.fontSize = 40
+        scoreLabel?.zPosition = 2
+        scoreLabel?.fontColor = UIColor.whiteColor()
+        scoreLabel?.position = bigBall!.position
+        addChild(scoreLabel!)
+        
+//        let field = SKFieldNode.radialGravityField()
+//        field.animationSpeed = 10.0
+//        field.smoothness = 1
+//        field.region = SKRegion(radius: Float(frame.width*3))
+//        field.position = bigBall!.position
+//        field.strength = 500.0
+//        field.enabled = true
+//        addChild(field)
         
         createBall()
     }
@@ -74,18 +89,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func didBeginContact(contact: SKPhysicsContact) {
         if(contact.bodyA.node?.name=="Small" && contact.bodyB.node?.name=="Big" || contact.bodyB.node?.name=="Small" && contact.bodyA.node?.name=="Big") {
             if smallBallState == bigBallState {
-                let expand = SKShapeNode.init(circleOfRadius: bigBall!.frame.width/2)
+                let expand = SKShapeNode.init(circleOfRadius: 10)
                 smallBall?.runAction(SKAction.sequence([SKAction.scaleTo(0.0, duration: 0.05),SKAction.removeFromParent()]))
                 expand.position = bigBall!.position
                 expand.fillColor = UIColor.clearColor()
                 expand.strokeColor = bigBall!.fillColor
                 expand.lineWidth = 2.0
-                expand.runAction(SKAction.sequence([SKAction.group([SKAction.scaleTo(2, duration: 0.5),SKAction.fadeOutWithDuration(0.5)]), SKAction.removeFromParent()]))
+                expand.runAction(SKAction.sequence([SKAction.group([SKAction.scaleTo(10, duration: 0.25),SKAction.fadeOutWithDuration(0.25)]), SKAction.removeFromParent()]))
                 addChild(expand)
+                score += 1
                 createBall()
             } else {
-                print("Game Over")
-//                fatalError()
+                createBall()
+//                print("Game Over")
+//                delegate = nil
+//                smallBall?.removeFromParent()
+//                let transition = SKTransition.doorsCloseVerticalWithDuration(0.5)
+//                let scene = GameOverScene()
+//                view?.presentScene(scene,transition: transition)
+                //fatalError()
             }
         }
     }
@@ -100,7 +122,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         smallBall?.position = CGPoint(x: CGFloat(arc4random() % UInt32(self.frame.width))-self.frame.width/2, y: self.frame.height + smallBall!.frame.height)
         smallBall?.physicsBody?.velocity = CGVector(dx: 10, dy: 10)
         smallBall?.physicsBody?.contactTestBitMask = (smallBall?.physicsBody?.collisionBitMask)!
-        smallBall?.physicsBody?.mass = 0.05
+        smallBall?.physicsBody?.mass = 0.0
+        let path = CGPathCreateMutable()
+        CGPathMoveToPoint(path, nil, smallBall!.position.x, smallBall!.position.y)
+        CGPathAddLineToPoint(path, nil, bigBall!.position.x, bigBall!.position.y)
+        let follow = SKAction.followPath(path, asOffset: false, orientToPath: true, duration: self.duration)
+        smallBall?.runAction(follow)
         addChild(smallBall!)
     }
     

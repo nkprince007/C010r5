@@ -10,5 +10,7 @@ import SpriteKit
 import GameplayKit
 
 class GameOverScene: SKScene {
-    
+    override func didMoveToView(view: SKView) {
+        
+    }
 }

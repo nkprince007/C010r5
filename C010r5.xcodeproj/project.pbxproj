@@ -15,6 +15,7 @@
 		B9117F151D447792007D4B51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9117F141D447792007D4B51 /* Assets.xcassets */; };
 		B96281691D44EE40002D9F32 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96281681D44EE40002D9F32 /* GameOver.swift */; };
 		B995AF051D44C57D00407303 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B995AF041D44C57D00407303 /* Main.storyboard */; };
+		B9FE087D1D475CDD000C5736 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FE087C1D475CDD000C5736 /* MenuScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		B9EAAE471D447E5600E38088 /* C010r5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = C010r5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9EAAE481D447E5600E38088 /* C010r5Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = C010r5Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9EAAE491D447E5600E38088 /* C010r5UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = C010r5UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9FE087C1D475CDD000C5736 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				B9117F0F1D447792007D4B51 /* GameViewController.swift */,
 				B9117F0D1D447792007D4B51 /* GameScene.swift */,
 				B96281681D44EE40002D9F32 /* GameOver.swift */,
+				B9FE087C1D475CDD000C5736 /* MenuScene.swift */,
 			);
 			path = C010r5;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			files = (
 				B9117F0E1D447792007D4B51 /* GameScene.swift in Sources */,
 				B9117F101D447792007D4B51 /* GameViewController.swift in Sources */,
+				B9FE087D1D475CDD000C5736 /* MenuScene.swift in Sources */,
 				B9117F081D447792007D4B51 /* AppDelegate.swift in Sources */,
 				B96281691D44EE40002D9F32 /* GameOver.swift in Sources */,
 			);
