@@ -33,15 +33,10 @@ class GameViewController: UIViewController {
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return .AllButUpsideDown
+            return .Portrait
         } else {
-            return .All
+            return .AllButUpsideDown
         }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -52,5 +47,4 @@ class GameViewController: UIViewController {
 public func +(lhs: CGSize, rhs: CGFloat) -> CGSize {
     return CGSizeMake(lhs.width+rhs, lhs.height+rhs)
 }
-
 

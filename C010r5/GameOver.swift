@@ -7,9 +7,18 @@
 //
 
 import SpriteKit
-import GameplayKit
 
 class GameOverScene: SKScene {
+    var score: Int!
+    var bestScore: Int!
+    
+    private var scoreNode: SKShapeNode!
+    private var scoreLabel: SKLabelNode!
+    private var bestScoreLabel: SKLabelNode!
+    
+    private var retry: SKNode!
+    private var back: SKNode!
+    
     override func didMoveToView(view: SKView) {
         
     }

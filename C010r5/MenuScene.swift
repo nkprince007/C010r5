@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import SafariServices
 
 class MenuScene: SKScene {
     
@@ -76,24 +77,30 @@ class MenuScene: SKScene {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch in touches {
             let location = touch.locationInNode(self)
-            if let btn = playButton, label = playLabel {
-                if btn.containsPoint(location) || label.containsPoint(location) {
-                    let transition = SKTransition.fadeWithDuration(duration)
-                    let move = SKAction.moveTo(playButton!.position + CGPoint(x: 0, y: -self.frame.height/4), duration: duration*0.5)
-                    playButton?.runAction(move)
-                    playLabel?.runAction(SKAction.fadeOutWithDuration(duration*0.25))
-                    title?.runAction(SKAction.moveTo(CGPointMake(title!.position.x,2000), duration: duration*0.25))
+            
+            if let btn = playButton, label = playLabel where btn.containsPoint(location) || label.containsPoint(location) {
+                
+                let transition = SKTransition.fadeWithDuration(duration)
+                let move = SKAction.moveTo(playButton!.position + CGPoint(x: 0, y: -self.frame.height/4),duration: duration*0.5)
+                playButton?.runAction(move)
+                playLabel?.runAction(SKAction.fadeOutWithDuration(duration*0.25))
+                title?.runAction(SKAction.moveTo(CGPointMake(title!.position.x,2000), duration: duration*0.25))
                     developer?.runAction(SKAction.moveTo(CGPointMake(developer!.position.x, -100), duration: duration*0.25))
                     
-                    // Load the SKScene from 'GameScene.sks'
-                    if let scene = SKScene(fileNamed: "GameScene") {
-                        transition.pausesOutgoingScene = false
-                        transition.pausesIncomingScene = false
-                        
-                        scene.scaleMode = .ResizeFill
-                        rootView?.presentScene(scene, transition: transition)
-                    }
+                // Load the SKScene from 'GameScene.sks'
+                let scene = GameScene()
+                    transition.pausesOutgoingScene = false
+                    transition.pausesIncomingScene = false
+                    scene.scaleMode = .ResizeFill
+                    rootView?.presentScene(scene, transition: transition)
+                
+            }
+            
+            if let label = developer where label.containsPoint(location) {
+                guard let url = NSURL(string: "http://fb.com/naveen.007.prince") else {
+                    return
                 }
+                UIApplication.sharedApplication().openURL(url)
             }
         }
     }

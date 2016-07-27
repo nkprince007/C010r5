@@ -8,13 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		B9117F081D447792007D4B51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9117F071D447792007D4B51 /* AppDelegate.swift */; };
-		B9117F0C1D447792007D4B51 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9117F0B1D447792007D4B51 /* Actions.sks */; };
 		B9117F0E1D447792007D4B51 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9117F0D1D447792007D4B51 /* GameScene.swift */; };
 		B9117F101D447792007D4B51 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9117F0F1D447792007D4B51 /* GameViewController.swift */; };
 		B9117F151D447792007D4B51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9117F141D447792007D4B51 /* Assets.xcassets */; };
 		B96281691D44EE40002D9F32 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96281681D44EE40002D9F32 /* GameOver.swift */; };
 		B995AF051D44C57D00407303 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B995AF041D44C57D00407303 /* Main.storyboard */; };
-		B9983BD61D487DAB00BFC263 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9983BD51D487DAB00BFC263 /* GameScene.sks */; };
 		B99F68ED1D477FD000030CD8 /* AmaticSC-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B99F68EB1D477FD000030CD8 /* AmaticSC-Bold.ttf */; };
 		B99F68EE1D477FD000030CD8 /* AmaticSC-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B99F68EC1D477FD000030CD8 /* AmaticSC-Regular.ttf */; };
 		B99F68F11D47804400030CD8 /* PoiretOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B99F68EF1D477FEC00030CD8 /* PoiretOne-Regular.ttf */; };
@@ -40,14 +38,12 @@
 
 /* Begin PBXFileReference section */
 		B9117F071D447792007D4B51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B9117F0B1D447792007D4B51 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		B9117F0D1D447792007D4B51 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		B9117F0F1D447792007D4B51 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		B9117F141D447792007D4B51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9117F191D447792007D4B51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B96281681D44EE40002D9F32 /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		B995AF041D44C57D00407303 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		B9983BD51D487DAB00BFC263 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		B99F68EB1D477FD000030CD8 /* AmaticSC-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AmaticSC-Bold.ttf"; sourceTree = "<group>"; };
 		B99F68EC1D477FD000030CD8 /* AmaticSC-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AmaticSC-Regular.ttf"; sourceTree = "<group>"; };
 		B99F68EF1D477FEC00030CD8 /* PoiretOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PoiretOne-Regular.ttf"; sourceTree = "<group>"; };
@@ -129,8 +125,6 @@
 		B9EAAE8B1D448A6F00E38088 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				B9983BD51D487DAB00BFC263 /* GameScene.sks */,
-				B9117F0B1D447792007D4B51 /* Actions.sks */,
 				B995AF041D44C57D00407303 /* Main.storyboard */,
 			);
 			name = Scenes;
@@ -253,9 +247,7 @@
 				B99F68EE1D477FD000030CD8 /* AmaticSC-Regular.ttf in Resources */,
 				B99F68ED1D477FD000030CD8 /* AmaticSC-Bold.ttf in Resources */,
 				B995AF051D44C57D00407303 /* Main.storyboard in Resources */,
-				B9983BD61D487DAB00BFC263 /* GameScene.sks in Resources */,
 				B9117F151D447792007D4B51 /* Assets.xcassets in Resources */,
-				B9117F0C1D447792007D4B51 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,6 @@
 //
 
 import SpriteKit
-import GameplayKit
 
 enum BallState{
     case Yellow
@@ -28,9 +27,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var smallBall: SKShapeNode?
     private var scoreLabel: SKLabelNode?
     private var duration: NSTimeInterval = 1.5
+    private var rootView: SKView!
     var score = 0 {
         willSet(val) {
             scoreLabel?.text = "\(val)"
+            if val % 10 == 0 && duration > 0.5 {
+                duration -= 0.075
+            }
         }
     }
     
@@ -49,21 +52,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func didMoveToView(view: SKView) {
+        rootView = view
         self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
-        self.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize.init(width: self.frame.width, height: 1), center: CGPoint(x: 0, y: -self.frame.height/2 + 1))
+        self.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize.init(width: view.frame.width, height: 1), center: CGPoint(x: 0, y: -view.frame.height/2 + 1))
         self.backgroundColor = UIColor.whiteColor()
         physicsWorld.contactDelegate = self
         self.physicsBody?.dynamic = false
         
         //Create the center ball
-        let w = (self.size.width + self.size.height ) * 0.1
+        let w = (view.frame.size.width + view.frame.size.height ) * 0.1
         bigBall = SKShapeNode.init(rectOfSize: CGSize.init(width: w, height: w), cornerRadius: w * 0.5)
         bigBall?.fillColor = colors[bigBallState]!
         bigBall?.physicsBody = SKPhysicsBody(circleOfRadius: w * 0.5, center: (bigBall?.position)!)
         bigBall?.physicsBody?.pinned = true
         bigBall?.lineWidth = 0.0
         bigBall?.name = "Big"
-        bigBall?.position = self.position + CGPoint(x: 0, y: -self.frame.height/4)
+        bigBall?.position = CGPointMake(view.frame.width/2, view.frame.height/4)
         addChild(bigBall!)
         
         //Create score label
@@ -71,7 +75,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreLabel?.fontSize = 40
         scoreLabel?.zPosition = 2
         scoreLabel?.fontColor = UIColor.whiteColor()
-        scoreLabel?.position = bigBall!.position
+        scoreLabel?.position = CGPointMake(bigBall!.position.x, bigBall!.position.y-scoreLabel!.frame.height/2)
         addChild(scoreLabel!)
         
         createBall()
@@ -103,13 +107,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func createBall() {
-        let w = (self.size.width + self.size.height ) * 0.05
+        let w = (rootView.frame.width + rootView.frame.height ) * 0.05
         smallBall = SKShapeNode.init(rectOfSize: CGSize.init(width: w, height: w), cornerRadius: w * 0.5)
         smallBallState = (arc4random() % 2 == 0 ? .Blue: .Yellow)
         smallBall?.physicsBody = SKPhysicsBody(circleOfRadius: w * 0.5, center: (smallBall?.position)!)
         smallBall?.lineWidth = 0.0
         smallBall?.name = "Small"
-        smallBall?.position = CGPoint(x: CGFloat(arc4random() % UInt32(self.frame.width))-self.frame.width/2, y: self.frame.height + smallBall!.frame.height)
+        smallBall?.position = CGPoint(x: CGFloat(arc4random() % UInt32(rootView.frame.width)), y: rootView.frame.height + smallBall!.frame.height)
         smallBall?.physicsBody?.velocity = CGVector(dx: 10, dy: 10)
         smallBall?.physicsBody?.contactTestBitMask = (smallBall?.physicsBody?.collisionBitMask)!
         smallBall?.physicsBody?.mass = 0.0
