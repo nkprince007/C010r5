@@ -23,7 +23,7 @@ let colors = [
     BallState.Blue: UIColor.init(colorLiteralRed: 0/255, green: 118/255, blue: 255/155, alpha: 1.0)]
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
-
+    
     private var bigBall : SKShapeNode?
     private var smallBall: SKShapeNode?
     private var scoreLabel: SKLabelNode?
@@ -74,15 +74,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreLabel?.position = bigBall!.position
         addChild(scoreLabel!)
         
-//        let field = SKFieldNode.radialGravityField()
-//        field.animationSpeed = 10.0
-//        field.smoothness = 1
-//        field.region = SKRegion(radius: Float(frame.width*3))
-//        field.position = bigBall!.position
-//        field.strength = 500.0
-//        field.enabled = true
-//        addChild(field)
-        
         createBall()
     }
     
@@ -101,13 +92,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 createBall()
             } else {
                 createBall()
-//                print("Game Over")
-//                delegate = nil
-//                smallBall?.removeFromParent()
-//                let transition = SKTransition.doorsCloseVerticalWithDuration(0.5)
-//                let scene = GameOverScene()
-//                view?.presentScene(scene,transition: transition)
-                //fatalError()
+                //                print("Game Over")
+                //                delegate = nil
+                //                smallBall?.removeFromParent()
+                //                let transition = SKTransition.doorsCloseVerticalWithDuration(0.5)
+                //                let scene = GameOverScene()
+                //                view?.presentScene(scene,transition: transition)
             }
         }
     }
