@@ -10,6 +10,11 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
+let color = [
+    "blue" : UIColor(red: 74.0/255.0, green: 144.0/255.0, blue: 226.0/255.0, alpha: 1.0),
+    "cyan" : UIColor(red: 80.0/255.0, green: 227.0/255.0, blue: 194.0/255.0, alpha: 1.0)
+]
+
 class GameViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -18,7 +23,7 @@ class GameViewController: UIViewController {
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             let scene = MenuScene()
-            scene.scaleMode = .ResizeFill
+            scene.scaleMode = .resizeFill
             view.presentScene(scene)
             
             view.ignoresSiblingOrder = true
@@ -27,24 +32,9 @@ class GameViewController: UIViewController {
         }
     }
     
-    override func shouldAutorotate() -> Bool {
-        return true
-    }
-    
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return .Portrait
-        } else {
-            return .AllButUpsideDown
-        }
-    }
-    
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
 }
 
 public func +(lhs: CGSize, rhs: CGFloat) -> CGSize {
-    return CGSizeMake(lhs.width+rhs, lhs.height+rhs)
+    return CGSize(width: lhs.width+rhs, height: lhs.height+rhs)
 }
 
