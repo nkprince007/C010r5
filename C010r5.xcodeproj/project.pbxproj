@@ -16,6 +16,8 @@
 		B99F68ED1D477FD000030CD8 /* AmaticSC-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B99F68EB1D477FD000030CD8 /* AmaticSC-Bold.ttf */; };
 		B99F68EE1D477FD000030CD8 /* AmaticSC-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B99F68EC1D477FD000030CD8 /* AmaticSC-Regular.ttf */; };
 		B99F68F11D47804400030CD8 /* PoiretOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B99F68EF1D477FEC00030CD8 /* PoiretOne-Regular.ttf */; };
+		B9F239621D86D7EB0007DAFF /* bgmusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B9F239611D86D7EB0007DAFF /* bgmusic.mp3 */; };
+		B9F239641D86D9E30007DAFF /* bggame.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B9F239631D86D9E30007DAFF /* bggame.mp3 */; };
 		B9FE087D1D475CDD000C5736 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FE087C1D475CDD000C5736 /* MenuScene.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,8 @@
 		B9EAAE471D447E5600E38088 /* C010r5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = C010r5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9EAAE481D447E5600E38088 /* C010r5Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = C010r5Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9EAAE491D447E5600E38088 /* C010r5UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = C010r5UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9F239611D86D7EB0007DAFF /* bgmusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgmusic.mp3; sourceTree = "<group>"; };
+		B9F239631D86D9E30007DAFF /* bggame.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bggame.mp3; sourceTree = "<group>"; };
 		B9FE087C1D475CDD000C5736 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +112,8 @@
 				B99F68EF1D477FEC00030CD8 /* PoiretOne-Regular.ttf */,
 				B99F68EB1D477FD000030CD8 /* AmaticSC-Bold.ttf */,
 				B99F68EC1D477FD000030CD8 /* AmaticSC-Regular.ttf */,
+				B9F239611D86D7EB0007DAFF /* bgmusic.mp3 */,
+				B9F239631D86D9E30007DAFF /* bggame.mp3 */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -245,9 +251,11 @@
 			files = (
 				B99F68F11D47804400030CD8 /* PoiretOne-Regular.ttf in Resources */,
 				B99F68EE1D477FD000030CD8 /* AmaticSC-Regular.ttf in Resources */,
+				B9F239641D86D9E30007DAFF /* bggame.mp3 in Resources */,
 				B99F68ED1D477FD000030CD8 /* AmaticSC-Bold.ttf in Resources */,
 				B995AF051D44C57D00407303 /* Main.storyboard in Resources */,
 				B9117F151D447792007D4B51 /* Assets.xcassets in Resources */,
+				B9F239621D86D7EB0007DAFF /* bgmusic.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

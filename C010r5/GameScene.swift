@@ -32,7 +32,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         willSet(val) {
             scoreLabel?.text = "\(val)"
             if val % 10 == 0 && duration > 0.5 {
-                duration -= 0.075
+                duration -= 0.1
             }
         }
     }
@@ -41,6 +41,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var bigBallState = BallState.blue {
         willSet(value) {
             bigBall?.fillColor = colors[value]!
+            bigBall?.strokeColor = colors[value]!
             bigBall?.run(SKAction.colorize(with: colors[value]!, colorBlendFactor: 1.0, duration: 0.25))
         }
     }
@@ -48,11 +49,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var smallBallState = BallState.blue {
         willSet(value) {
             smallBall?.fillColor = colors[value]!
+            smallBall?.strokeColor = colors[value]!
         }
     }
     
     override func didMove(to view: SKView) {
         rootView = view
+        
+        if let musicURL = Bundle.main.url(forResource: "bggame", withExtension: "mp3") {
+            backgroundMusic = SKAudioNode(url: musicURL)
+            backgroundMusic.autoplayLooped = true
+            addChild(backgroundMusic)
+        }
+        
         self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         self.physicsBody = SKPhysicsBody(rectangleOf: CGSize.init(width: view.frame.width, height: 1), center: CGPoint(x: 0, y: -view.frame.height/2 + 1))
         self.backgroundColor = UIColor.white
@@ -65,8 +74,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         bigBall?.fillColor = colors[bigBallState]!
         bigBall?.physicsBody = SKPhysicsBody(circleOfRadius: w * 0.5, center: (bigBall?.position)!)
         bigBall?.physicsBody?.pinned = true
-        bigBall?.lineWidth = 0.0
+        bigBall?.lineWidth = 3.0
         bigBall?.name = "Big"
+        bigBall?.isAntialiased = true
         bigBall?.position = CGPoint(x: view.frame.width/2, y: view.frame.height/4)
         addChild(bigBall!)
         
@@ -77,7 +87,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreLabel?.fontColor = UIColor.white
         scoreLabel?.position = CGPoint(x: bigBall!.position.x, y: bigBall!.position.y-scoreLabel!.frame.height/2)
         addChild(scoreLabel!)
-        
         createBall()
     }
     
@@ -96,7 +105,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 createBall()
             } else {
                 createBall()
-                print("Game Over")
+                gameState = .Dead
                 delegate = nil
                 smallBall?.removeFromParent()
                 let transition = SKTransition.doorsCloseVertical(withDuration: 0.5)
@@ -114,7 +123,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         smallBall = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.5)
         smallBallState = (arc4random() % 2 == 0 ? .blue: .yellow)
         smallBall?.physicsBody = SKPhysicsBody(circleOfRadius: w * 0.5, center: (smallBall?.position)!)
-        smallBall?.lineWidth = 0.0
+        smallBall?.lineWidth = 3.0
+        smallBall?.isAntialiased = true
         smallBall?.name = "Small"
         smallBall?.position = CGPoint(x: CGFloat(arc4random() % UInt32(rootView.frame.width)), y: rootView.frame.height + smallBall!.frame.height)
         smallBall?.physicsBody?.velocity = CGVector(dx: 10, dy: 10)

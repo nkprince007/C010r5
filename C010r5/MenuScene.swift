@@ -24,6 +24,12 @@ class MenuScene: SKScene {
         backgroundColor = UIColor.black
         rootView = view
         
+        if let musicURL = Bundle.main.url(forResource: "bgmusic", withExtension: "mp3") {
+            backgroundMusic = SKAudioNode(url: musicURL)
+            backgroundMusic.autoplayLooped = true
+            addChild(backgroundMusic)
+        }
+        
         playLabel = SKLabelNode(fontNamed: "AmaticSC-Bold")
         playLabel?.fontColor = UIColor.black
         playLabel?.fontSize = 40
@@ -89,6 +95,8 @@ class MenuScene: SKScene {
                 
                 // Load the SKScene from 'GameScene.sks'
                 let scene = GameScene()
+                gameState = .Playing
+                backgroundMusic = nil
                 transition.pausesOutgoingScene = false
                 transition.pausesIncomingScene = false
                 scene.scaleMode = .resizeFill

@@ -56,7 +56,7 @@ class GameOverScene: SKScene {
         addChild(bestScoreNode)
         
         var size = rootView!.bounds.size
-        let offset : CGFloat = 30
+        let offset : CGFloat = 45
         size.width = size.width - 2*offset
         size.height = size.height - 2*offset - size.height * 3.0/7.0
         let origin = CGPoint(x: offset, y: rootView!.bounds.height/2)

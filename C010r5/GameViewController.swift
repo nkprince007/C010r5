@@ -15,6 +15,15 @@ let color = [
     "cyan" : UIColor(red: 80.0/255.0, green: 227.0/255.0, blue: 194.0/255.0, alpha: 1.0)
 ]
 
+enum GameState {
+    case Intro
+    case Playing
+    case Dead
+}
+
+var gameState = GameState.Intro
+var backgroundMusic: SKAudioNode!
+
 class GameViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -32,9 +41,15 @@ class GameViewController: UIViewController {
         }
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
 
 public func +(lhs: CGSize, rhs: CGFloat) -> CGSize {
     return CGSize(width: lhs.width+rhs, height: lhs.height+rhs)
 }
-
