@@ -21,6 +21,8 @@ let colors = [
     BallState.yellow: UIColor.init(colorLiteralRed: 255/255, green: 205/255, blue: 0/255, alpha: 1.0),
     BallState.blue: UIColor.init(colorLiteralRed: 0/255, green: 118/255, blue: 255/155, alpha: 1.0)]
 
+var music: SKNode!
+
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private var bigBall : SKShapeNode?

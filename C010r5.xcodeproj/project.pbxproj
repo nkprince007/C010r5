@@ -13,12 +13,14 @@
 		B9117F151D447792007D4B51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9117F141D447792007D4B51 /* Assets.xcassets */; };
 		B96281691D44EE40002D9F32 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96281681D44EE40002D9F32 /* GameOver.swift */; };
 		B995AF051D44C57D00407303 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B995AF041D44C57D00407303 /* Main.storyboard */; };
-		B99F68ED1D477FD000030CD8 /* AmaticSC-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B99F68EB1D477FD000030CD8 /* AmaticSC-Bold.ttf */; };
-		B99F68EE1D477FD000030CD8 /* AmaticSC-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B99F68EC1D477FD000030CD8 /* AmaticSC-Regular.ttf */; };
-		B99F68F11D47804400030CD8 /* PoiretOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B99F68EF1D477FEC00030CD8 /* PoiretOne-Regular.ttf */; };
-		B9F239621D86D7EB0007DAFF /* bgmusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B9F239611D86D7EB0007DAFF /* bgmusic.mp3 */; };
-		B9F239641D86D9E30007DAFF /* bggame.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B9F239631D86D9E30007DAFF /* bggame.mp3 */; };
 		B9FE087D1D475CDD000C5736 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FE087C1D475CDD000C5736 /* MenuScene.swift */; };
+		EB18C6211D883BDB009C49EF /* bggame.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB18C61A1D883BDB009C49EF /* bggame.mp3 */; };
+		EB18C6221D883BDB009C49EF /* bgmusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB18C61B1D883BDB009C49EF /* bgmusic.mp3 */; };
+		EB18C6241D883BDB009C49EF /* AmaticSC-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB18C61D1D883BDB009C49EF /* AmaticSC-Bold.ttf */; };
+		EB18C6251D883BDB009C49EF /* AmaticSC-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB18C61E1D883BDB009C49EF /* AmaticSC-Regular.ttf */; };
+		EB18C6261D883BDB009C49EF /* PoiretOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB18C61F1D883BDB009C49EF /* PoiretOne-Regular.ttf */; };
+		EB18C6271D883BDB009C49EF /* PressStart2P-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB18C6201D883BDB009C49EF /* PressStart2P-Regular.ttf */; };
+		EB18C6291D883D64009C49EF /* pulse.caf in Resources */ = {isa = PBXBuildFile; fileRef = EB18C6281D883D64009C49EF /* pulse.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,15 +48,17 @@
 		B9117F191D447792007D4B51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B96281681D44EE40002D9F32 /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		B995AF041D44C57D00407303 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		B99F68EB1D477FD000030CD8 /* AmaticSC-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AmaticSC-Bold.ttf"; sourceTree = "<group>"; };
-		B99F68EC1D477FD000030CD8 /* AmaticSC-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AmaticSC-Regular.ttf"; sourceTree = "<group>"; };
-		B99F68EF1D477FEC00030CD8 /* PoiretOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PoiretOne-Regular.ttf"; sourceTree = "<group>"; };
 		B9EAAE471D447E5600E38088 /* C010r5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = C010r5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9EAAE481D447E5600E38088 /* C010r5Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = C010r5Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9EAAE491D447E5600E38088 /* C010r5UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = C010r5UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9F239611D86D7EB0007DAFF /* bgmusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgmusic.mp3; sourceTree = "<group>"; };
-		B9F239631D86D9E30007DAFF /* bggame.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bggame.mp3; sourceTree = "<group>"; };
 		B9FE087C1D475CDD000C5736 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		EB18C61A1D883BDB009C49EF /* bggame.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bggame.mp3; path = res/audio/bggame.mp3; sourceTree = "<group>"; };
+		EB18C61B1D883BDB009C49EF /* bgmusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bgmusic.mp3; path = res/audio/bgmusic.mp3; sourceTree = "<group>"; };
+		EB18C61D1D883BDB009C49EF /* AmaticSC-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AmaticSC-Bold.ttf"; path = "res/fonts/AmaticSC-Bold.ttf"; sourceTree = "<group>"; };
+		EB18C61E1D883BDB009C49EF /* AmaticSC-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AmaticSC-Regular.ttf"; path = "res/fonts/AmaticSC-Regular.ttf"; sourceTree = "<group>"; };
+		EB18C61F1D883BDB009C49EF /* PoiretOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "PoiretOne-Regular.ttf"; path = "res/fonts/PoiretOne-Regular.ttf"; sourceTree = "<group>"; };
+		EB18C6201D883BDB009C49EF /* PressStart2P-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "PressStart2P-Regular.ttf"; path = "res/fonts/PressStart2P-Regular.ttf"; sourceTree = "<group>"; };
+		EB18C6281D883D64009C49EF /* pulse.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = pulse.caf; path = res/audio/pulse.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,11 +113,13 @@
 		B99F68F01D47800F00030CD8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B99F68EF1D477FEC00030CD8 /* PoiretOne-Regular.ttf */,
-				B99F68EB1D477FD000030CD8 /* AmaticSC-Bold.ttf */,
-				B99F68EC1D477FD000030CD8 /* AmaticSC-Regular.ttf */,
-				B9F239611D86D7EB0007DAFF /* bgmusic.mp3 */,
-				B9F239631D86D9E30007DAFF /* bggame.mp3 */,
+				EB18C61A1D883BDB009C49EF /* bggame.mp3 */,
+				EB18C61B1D883BDB009C49EF /* bgmusic.mp3 */,
+				EB18C6281D883D64009C49EF /* pulse.caf */,
+				EB18C61D1D883BDB009C49EF /* AmaticSC-Bold.ttf */,
+				EB18C61E1D883BDB009C49EF /* AmaticSC-Regular.ttf */,
+				EB18C61F1D883BDB009C49EF /* PoiretOne-Regular.ttf */,
+				EB18C6201D883BDB009C49EF /* PressStart2P-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -249,13 +255,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B99F68F11D47804400030CD8 /* PoiretOne-Regular.ttf in Resources */,
-				B99F68EE1D477FD000030CD8 /* AmaticSC-Regular.ttf in Resources */,
-				B9F239641D86D9E30007DAFF /* bggame.mp3 in Resources */,
-				B99F68ED1D477FD000030CD8 /* AmaticSC-Bold.ttf in Resources */,
 				B995AF051D44C57D00407303 /* Main.storyboard in Resources */,
+				EB18C6211D883BDB009C49EF /* bggame.mp3 in Resources */,
+				EB18C6251D883BDB009C49EF /* AmaticSC-Regular.ttf in Resources */,
+				EB18C6291D883D64009C49EF /* pulse.caf in Resources */,
 				B9117F151D447792007D4B51 /* Assets.xcassets in Resources */,
-				B9F239621D86D7EB0007DAFF /* bgmusic.mp3 in Resources */,
+				EB18C6261D883BDB009C49EF /* PoiretOne-Regular.ttf in Resources */,
+				EB18C6271D883BDB009C49EF /* PressStart2P-Regular.ttf in Resources */,
+				EB18C6241D883BDB009C49EF /* AmaticSC-Bold.ttf in Resources */,
+				EB18C6221D883BDB009C49EF /* bgmusic.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
